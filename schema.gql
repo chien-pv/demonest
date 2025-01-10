@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PhotoDTO {
+  id: Int!
+  url: String!
+  user: UserDTO!
+}
+
+type UserDTO {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  isActive: Boolean!
+  photos: [PhotoDTO!]!
+}
+
+type Query {
+  users: [UserDTO!]!
+  products: String!
+}

@@ -6,9 +6,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './sql/users/users.module';
 import { User } from './sql/users/user.entity';
 import { Photo } from './sql/photos/photo.entity';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 @Module({
   imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'schema.gql',
+    }),
+
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
