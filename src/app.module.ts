@@ -8,6 +8,7 @@ import { User } from './sql/users/user.entity';
 import { Photo } from './sql/photos/photo.entity';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { JwtService } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -29,6 +30,6 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
     UsersModule,
   ],
   controllers: [AppController, AboutController],
-  providers: [AppService],
+  providers: [AppService, JwtService],
 })
 export class AppModule {}

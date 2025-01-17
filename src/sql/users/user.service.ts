@@ -18,8 +18,12 @@ export class UserService {
     });
   }
 
+  getOne(id: number): Promise<User> {
+    return this.usersRepository.findOneById(id);
+  }
+
   createUser(user) {
-    return this.usersRepository.save([user, user]);
+    return this.usersRepository.save(user);
   }
 
   updateUser(user, id) {

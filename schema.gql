@@ -18,5 +18,14 @@ type UserDTO {
 
 type Query {
   users: [UserDTO!]!
-  products: String!
+  user(id: Int!): UserDTO!
+}
+
+type Mutation {
+  createUser(user: UserParams!): UserDTO!
+}
+
+input UserParams {
+  firstName: String!
+  lastName: String!
 }

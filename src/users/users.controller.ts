@@ -32,6 +32,7 @@ export class UsersController {
       res.status(500).json({ message: error.message });
     }
   }
+
   @Get('detail/:id')
   async details(@Param() params: Params, @Res() res: Response) {
     const id = String(params.id);
